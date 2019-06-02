@@ -155,7 +155,7 @@ class Toggl():
 
     def stopTimeEntry(self, entryid):
         '''Stop the time entry'''
-        response = self.postRequest(Endpoints.STOP_TIME(entryid))
+        response = self.postRequest(Endpoints.STOP_TIME(entryid), method='PUT')
         return self.decodeJSON(response)
 
     def createTimeEntry(self, hourduration, description=None, projectid=None, projectname=None,
